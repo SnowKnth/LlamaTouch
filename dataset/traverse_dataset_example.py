@@ -21,8 +21,8 @@ for epi_id in episodes[:10]:
     print(task_description)
 
     trace: TaskTrace = helper.load_groundtruth_trace_by_episode(epi_id)
-    screenshots = get_all_screenshot_paths(trace)
-    vhs = get_all_vh_paths(trace)
+    screenshots: List[str] = get_all_screenshot_paths(trace)
+    vhs: List[str] = get_all_vh_paths(trace)
     actions = get_all_actions(trace)
 
     print(screenshots)

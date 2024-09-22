@@ -1,0 +1,23 @@
+# Ignore my local editor settings
+.vscode/
+
+agent_exec_traces/
+
+AgentEnv/__pycache__/
+AgentEnv/setup/__pycache__/
+AgentEnv/utils/__pycache__/
+
+AutoDroid/__pycache__/
+
+dataset/llamatouch_dataset_0521/
+
+Evaluator/__pycache__/
+Evaluator/evaluator/__pycache__/
+Evaluator/common/__pycache__/
+Evaluator/exactmatch_evaluation/__pycache__/
+Evaluator/testbed_evaluation/__pycache__/
+Evaluator/utils/__pycache__/
+
+FTdroid-main/*
+!FTdroid-main/README.md
+

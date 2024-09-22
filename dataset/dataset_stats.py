@@ -1,3 +1,4 @@
+'''Calculate and show dataset statistics, including the number of actions, essential states, etc.'''
 import os
 import sys
 from collections import defaultdict

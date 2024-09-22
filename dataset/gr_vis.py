@@ -1,3 +1,5 @@
+'''Plot aggregate figures for every ground-truth trace, or for a single trace.
+Output: agg_plot.png'''
 import copy
 import os
 import sys

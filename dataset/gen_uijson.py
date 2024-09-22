@@ -1,3 +1,7 @@
+''' Filter important UI nodes from xml file and generate a json file for drawling bounding boxes.
+
+Outputs: 0.json, 1.json, ...'''
+
 import json
 import os
 import sys

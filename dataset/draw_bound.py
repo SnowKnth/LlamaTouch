@@ -1,3 +1,6 @@
+'''Draw bounding boxes according to generated json file using gen_uijson.py.
+
+Outputs: 0_drawed.png, 1_drawed.png, ...'''
 import json
 import os
 import sys

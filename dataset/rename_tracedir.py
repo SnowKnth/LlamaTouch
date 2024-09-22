@@ -1,3 +1,6 @@
+'''Convert timestamp-based captured traces to indices-based traces.
+
+'''
 import os
 import re
 import shutil

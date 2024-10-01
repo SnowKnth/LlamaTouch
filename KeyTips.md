@@ -15,7 +15,7 @@ networksetup -getsocksfirewallproxy Wi-Fi
 
 emulator -avd blabla -no-snapshot-load -http-proxy 127.0.0.1:7890(代理好像不起作用)
 Ubuntu 服务器运行：系统不支持为包含 Vulkan 图形库的模拟器创建快照。如需在不使用 Vulkan 的情况下运行模拟器，请通过命令行启动模拟器，并使用标志 -feature -Vulkan。
-针对allow debugging和authorized状态不能保存问题：在模拟器中确认权限，删除~/.android/adbkey adbkey.pub，revoke authority必须但顺序不确定，运行 adb kill-server(会重新创建adbkey adbkey.pub)， adb start-server（重新创建adbkey & adbkey.pub）。关闭模拟器后，重新使用cmdline命令启动,应该就不会再弹出allow debugging窗口。  
+针对allow debugging和authorized状态不能保存问题：在模拟器中确认权限，删除~/.android/adbkey adbkey.pub，revoke authority必须但顺序不确定，运行 adb kill-server(会重新创建adbkey adbkey.pub)， adb start-server（重新创建adbkey & adbkey.pub）。关闭模拟器后，重新使用cmdline命令启动,应该就不会再弹出allow debugging窗口。  (***abdkey和adbkey.pub用于模拟器和adb服务端之间的连接授权，adbkey.pub在用户点击授权同意后将存储在模拟器用户层（snapshot层）；所以要以保存snapshot的方式打开模拟器，Revoke清除授权，然后点击授权同意，就应该可以更新adbkey.pub且保存授权成功)
 
 llmatouch_dataset_0521:处理后形成的基准数据集。
 dataset:将某种手动录制的序列作为输入，对数据集进行后处理从而形成llmatouch_dataset_0521的一系列程序

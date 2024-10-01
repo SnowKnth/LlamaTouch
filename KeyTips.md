@@ -35,3 +35,52 @@ python3 main_exec_testbed3.py
 
 environment.py  AgentEnv setup()中self.emulator_controller.load_emulator_with_snapshot()取消，改为提前启动模拟器
 emulator -avd pixel_6a_api31 -no-snapshot-save -feature -Vulkan
+
+
+
+# 如何在ubuntu上连接安卓终端设备：
+根据你提供的信息，两个设备的 idVendor 和 idProduct 分别是：
+
+OPPO 设备：
+
+idVendor: 22d9
+idProduct: 2774
+华为设备：
+
+idVendor: 12d1
+idProduct: 107d
+要为这些设备创建相应的 udev 规则，可以在 /etc/udev/rules.d/ 中创建或修改一个规则文件，例如 51-android.rules，并添加以下内容：
+
+bash
+复制代码
+# OPPO 设备
+SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", MODE="0666", GROUP="plugdev"
+
+# 华为设备
+SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", MODE="0666", GROUP="plugdev"
+完整步骤：
+打开或创建规则文件：
+
+bash
+复制代码
+sudo nano /etc/udev/rules.d/51-android.rules
+添加规则： 将上面的规则粘贴到文件中。
+
+保存并退出： 按 Ctrl + O 保存，按 Ctrl + X 退出。
+
+重新加载 udev 规则：
+
+bash
+复制代码
+sudo udevadm control --reload-rules
+重启 udev 服务（可选）：
+
+bash
+复制代码
+sudo service udev restart
+断开并重新连接设备，然后检查设备是否能被识别：
+
+bash
+复制代码
+adb devices
+通过这些步骤，你的 OPPO 和华为设备应该可以在 Ubuntu 上被 adb 识别。如果还有问题，可以检查手机的 USB 调试设置是否已开启，并确保授权了连接。

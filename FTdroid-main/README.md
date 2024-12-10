@@ -21,4 +21,4 @@ FTdroid 消融实验：？
 
 针对特定app，进行在线探索的过程中构建该app的领域知识（类似AutoDroid）用于增强上述方法。
 
-python start.py -o outtmp -is_emulator
+python start.py -o outtmp -a apps -is_emulator

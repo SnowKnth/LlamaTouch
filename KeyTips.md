@@ -1,3 +1,5 @@
+
+
 You should add system version and app version to compose function step description, because among various versions, gui operations often differs
 Automator 文件夹操作 shell脚本 ;bash /Users/water2cloud/procVolumes.sh; 选中某文件，右键点击服务，选择文件夹操作
 ps aux | awk 'NR==1 || /qemu/'
@@ -13,22 +15,24 @@ networksetup -getsocksfirewallproxy Wi-Fi
 如果你使用的是其他网络接口（如有线网络），可以替换 Wi-Fi 为 Ethernet 或其他接口名称。
 
 
-emulator -avd blabla -no-snapshot-load -http-proxy 127.0.0.1:7890(代理好像不起作用)
+emulator -avd pixel_6a_api31 -no-snapshot-save -feature -Vulkan
 Ubuntu 服务器运行：系统不支持为包含 Vulkan 图形库的模拟器创建快照。如需在不使用 Vulkan 的情况下运行模拟器，请通过命令行启动模拟器，并使用标志 -feature -Vulkan。
+
 针对allow debugging和authorized状态不能保存问题：在模拟器中确认权限，删除~/.android/adbkey adbkey.pub，revoke authority必须但顺序不确定，运行 adb kill-server(会重新创建adbkey adbkey.pub)， adb start-server（重新创建adbkey & adbkey.pub）。关闭模拟器后，重新使用cmdline命令启动,应该就不会再弹出allow debugging窗口。  (***abdkey和adbkey.pub用于模拟器和adb服务端之间的连接授权，adbkey.pub在用户点击授权同意后将存储在模拟器用户层（snapshot层）；所以要以保存snapshot的方式打开模拟器，Revoke清除授权，然后点击授权同意，就应该可以更新adbkey.pub且保存授权成功)
+最简洁方法!!!：以保存snapshot方式打开，模拟器上revoke authority(删除模拟器端公钥)，adb kill-server(会重新上传公钥询问是否在模拟器端allow debugging)，确认后adb start-server.
 
 llmatouch_dataset_0521:处理后形成的基准数据集。
 dataset:将某种手动录制的序列作为输入，对数据集进行后处理从而形成llmatouch_dataset_0521的一系列程序
 Evaluator:访问llmatouch_dataset_0521的主要封装函数，对比groundtruth和collected traces from AgentEnv
 AgentEnv: agent运行的环境，用于交互和collect traces.
-agent_exec_traces: AutoUI在AgentEnv运行形成的traces，以及人工标准是否成功的基准。
+agent_exec_traces: AutoUI在AgentEnv运行形成的traces，以及人工标注是否成功的基准。
 
 只设置export https_proxy=http://127.0.0.1:7890（不设置http_proxy）
 curl -v https://www.google.com
 
 
 export AGENTENV_PATH='/data/wxd/LlamaTouch/AgentEnv'
-export FIRST_N_EPISODES=2
+export FIRST_N_EPISODES=400
 export OPENAI_APIKEY='sk-lNSaW2EZ2kkc0Bw1Db9645248e98434693410e0656F93c2d'
 export OPENAI_BASEURL='https://aigc.x-see.cn/v1/'
 python3 main_exec_testbed3.py

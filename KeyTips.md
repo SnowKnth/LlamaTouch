@@ -35,6 +35,7 @@ export AGENTENV_PATH='/data/wxd/LlamaTouch/AgentEnv'
 export FIRST_N_EPISODES=400
 export OPENAI_APIKEY='sk-lNSaW2EZ2kkc0Bw1Db9645248e98434693410e0656F93c2d'
 export OPENAI_BASEURL='https://aigc.x-see.cn/v1/'
+python main_step_guided.py -d emulator-5554 -is_emulator
 python3 main_exec_testbed3.py
 
 environment.py  AgentEnv setup()中self.emulator_controller.load_emulator_with_snapshot()取消，改为提前启动模拟器
@@ -46,7 +47,6 @@ emulator -avd pixel_6a_api31 -no-snapshot-save -feature -Vulkan
 根据你提供的信息，两个设备的 idVendor 和 idProduct 分别是：
 
 OPPO 设备：
-
 idVendor: 22d9
 idProduct: 2774
 华为设备：

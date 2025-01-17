@@ -18,6 +18,10 @@ networksetup -getsocksfirewallproxy Wi-Fi
 emulator -avd pixel_6a_api31 -no-snapshot-save -feature -Vulkan
 Ubuntu 服务器运行：系统不支持为包含 Vulkan 图形库的模拟器创建快照。如需在不使用 Vulkan 的情况下运行模拟器，请通过命令行启动模拟器，并使用标志 -feature -Vulkan。
 
+-no-snapshot-load 从code-start内容中启动，会覆盖snapshot(不论是否保存成功)
+
+-no-snapshot-save 不将当前运行的snapshot保存到snapshot，但是会保存到code-start(即-no-snapshot-load) 对应的内容中，做的更改也会保存到code-start，只是当前运行状态不保存（类似睡眠的内存保存加载）
+
 针对allow debugging和authorized状态不能保存问题：在模拟器中确认权限，删除~/.android/adbkey adbkey.pub，revoke authority必须但顺序不确定，运行 adb kill-server(会重新创建adbkey adbkey.pub)， adb start-server（重新创建adbkey & adbkey.pub）。关闭模拟器后，重新使用cmdline命令启动,应该就不会再弹出allow debugging窗口。  (***abdkey和adbkey.pub用于模拟器和adb服务端之间的连接授权，adbkey.pub在用户点击授权同意后将存储在模拟器用户层（snapshot层）；所以要以保存snapshot的方式打开模拟器，Revoke清除授权，然后点击授权同意，就应该可以更新adbkey.pub且保存授权成功)
 最简洁方法!!!：以保存snapshot方式打开，模拟器上revoke authority(删除模拟器端公钥)，adb kill-server(会重新上传公钥询问是否在模拟器端allow debugging)，确认后adb start-server.
 
@@ -31,15 +35,14 @@ agent_exec_traces: AutoUI在AgentEnv运行形成的traces，以及人工标注�
 curl -v https://www.google.com
 
 
-export AGENTENV_PATH='/data/wxd/LlamaTouch/AgentEnv'
-export FIRST_N_EPISODES=400
-export OPENAI_APIKEY='sk-lNSaW2EZ2kkc0Bw1Db9645248e98434693410e0656F93c2d'
-export OPENAI_BASEURL='https://aigc.x-see.cn/v1/'
-python main_step_guided.py -d emulator-5554 -is_emulator
-python3 main_exec_testbed3.py
+
+
+
 
 environment.py  AgentEnv setup()中self.emulator_controller.load_emulator_with_snapshot()取消，改为提前启动模拟器
 emulator -avd pixel_6a_api31 -no-snapshot-save -feature -Vulkan
+
+
 
 
 

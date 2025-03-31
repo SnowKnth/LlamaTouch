@@ -3,14 +3,17 @@
 
 agent_exec_traces/
 
+AgentEnv
 AgentEnv/__pycache__/
 AgentEnv/setup/__pycache__/
 AgentEnv/utils/__pycache__/
 
+AutoDroid
 AutoDroid/__pycache__/
 
 dataset/llamatouch_dataset_0521/
 
+Evaluator
 Evaluator/__pycache__/
 Evaluator/evaluator/__pycache__/
 Evaluator/common/__pycache__/
@@ -18,6 +21,9 @@ Evaluator/exactmatch_evaluation/__pycache__/
 Evaluator/testbed_evaluation/__pycache__/
 Evaluator/utils/__pycache__/
 
+RASSDroid
+
 FTdroid-main/*
 !FTdroid-main/README.md
 
+Scripts_APIKeys.txt

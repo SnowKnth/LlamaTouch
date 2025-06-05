@@ -18,7 +18,7 @@ networksetup -getsocksfirewallproxy Wi-Fi
 emulator -avd pixel_6a_api31 -no-snapshot-save -feature -Vulkan
 Ubuntu 服务器运行：系统不支持为包含 Vulkan 图形库的模拟器创建快照。如需在不使用 Vulkan 的情况下运行模拟器，请通过命令行启动模拟器，并使用标志 -feature -Vulkan。
 
--no-snapshot-load 从code-start内容中启动，会覆盖snapshot(不论是否保存成功)
+-no-snapshot-load 从code-start内容中启动，加上这个选项才会保存覆盖snapshot（控制命令行显示Saving with gfxstream=1）；假如不加-no-snapshot-load和-no-snapshot-save，会试着加载snapshot,但不会保存覆盖snapshot，但是会保存覆盖code-start版本，就是说code-start版本在任何情况下都会保存; 真正要想打开snapshot且保存snapshot，需要点...打开侧面控制台，点击Snapshots->Settings->Save quick-boot ...(change to Ask)->Save Now
 
 -no-snapshot-save 不将当前运行的snapshot保存到snapshot，但是会保存到code-start(即-no-snapshot-load) 对应的内容中，做的更改也会保存到code-start，只是当前运行状态不保存（类似睡眠的内存保存加载）
 
@@ -91,3 +91,7 @@ bash
 复制代码
 adb devices
 通过这些步骤，你的 OPPO 和华为设备应该可以在 Ubuntu 上被 adb 识别。如果还有问题，可以检查手机的 USB 调试设置是否已开启，并确保授权了连接。
+
+
+1. Copy1_of_p6a  到 Copy5_of_p6a 完成了login等，并且补充安装了com.google.android.calculator，3/4/1/2/5
+通过android studio负值产生的emulator，原有snapshot会复制不成功，需要冷启动一次，然后手动（假如用了no-snapshot-save选项启动）或自动（冷启动）关闭时自动保存snapshot。

@@ -41,6 +41,7 @@ curl -v https://www.google.com
 
 environment.py  AgentEnv setup()中self.emulator_controller.load_emulator_with_snapshot()取消，改为提前启动模拟器
 emulator -avd pixel_6a_api31 -no-snapshot-save -feature -Vulkan
+emulator -avd Copy3_of_p6a -port 5560 -no-snapshot-save -feature -Vulkan
 
 
 

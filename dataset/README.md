@@ -117,3 +117,24 @@ A sequence of scripts for processing the recorded UI interaction traces.
     python3 draw_bound.py [/path/to/0.png] [/path/to/1.png] ...
     ```
 
+## Modification
+
+1. 74876621317193717445	generated	generated/trace_56	Create a new note titled 'Daily Issues' on Google Keep Notes app.	5	Google Keep Notes
+
+4.ess '''activity<0>|exact<25>''' -> '''activity<0>|exact<16>'''
+4.json '''    
+{
+        "id": 25,
+        "class": "android.widget.EditText",
+        "text": "Daily Issues",
+        "resource-id": "com.google.android.keep:id/editable_title",
+        ...
+}
+->
+{
+        "id": 16,
+        "class": "android.widget.EditText",
+        "text": "Daily Issues",
+        "resource-id": "com.google.android.keep:id/editable_title",
+        ...
+}

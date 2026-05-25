@@ -1,0 +1,34 @@
+% ESS Statistics Table for LaTeX
+% Include this in your paper using \input{table_ess_statistics.tex}
+
+\begin{table}[ht]
+\centering
+\caption{ESS Dataset Statistics}
+\label{tab:ess_statistics}
+\begin{tabular}{lrr}
+\hline
+\textbf{Metric} & \textbf{Value} & \textbf{\%} \\
+\hline
+\multicolumn{3}{l}{\textit{Episode Statistics}} \\
+Total Episodes & 495 & -- \\
+Total Key States (.ess files) & 552 & -- \\
+Avg. Key Subgoals per Episode & 1.12 & -- \\
+Max Key Subgoals per Episode & 3 & -- \\
+\hline
+\multicolumn{3}{l}{\textit{Assertion Statistics}} \\
+Total Assertions & 1379 & 100.0 \\
+UI-related Assertions & 878 & 63.7 \\
+Non-UI Assertions & 501 & 36.3 \\
+Avg. Assertions per Key State & 2.50 & -- \\
+\hline
+\multicolumn{3}{l}{\textit{Assertion Type Breakdown}} \\
+Exact Match & 698 & 50.6 \\
+Activity Check & 490 & 35.5 \\
+Click Action & 98 & 7.1 \\
+Fuzzy Match & 82 & 5.9 \\
+Install Check & 7 & 0.5 \\
+Uninstall Check & 3 & 0.2 \\
+Text Input & 1 & 0.1 \\
+\hline
+\end{tabular}
+\end{table}

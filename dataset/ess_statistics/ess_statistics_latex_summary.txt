@@ -1,0 +1,71 @@
+================================================================================
+ESS STATISTICS SUMMARY FOR LATEX PAPERS
+================================================================================
+
+GENERATED FILES:
+--------------------------------------------------------------------------------
+Figures (PDF and PNG formats):
+  - fig_subgoals_distribution.[pdf|png]
+  - fig_assertions_distribution.[pdf|png]
+  - fig_assertion_types.[pdf|png]
+  - fig_ui_assertions_breakdown.[pdf|png]
+
+Tables:
+  - table_ess_statistics.tex
+
+================================================================================
+KEY STATISTICS
+================================================================================
+
+Episode Statistics:
+  Total Episodes: 495
+  Total Key States (.ess files): 552
+  Average Key Subgoals per Episode: 1.12
+  Median: 1.0
+  Range: 1-3
+
+Assertion Statistics:
+  Total Assertions: 1379
+  Average per Key State: 2.50
+  UI-related: 878 (63.7%)
+  Non-UI: 501 (36.3%)
+
+Assertion Type Distribution:
+  exact               :  698 ( 50.6%) [UI-related]
+  activity            :  490 ( 35.5%)
+  click               :   98 (  7.1%) [UI-related]
+  fuzzy               :   82 (  5.9%) [UI-related]
+  check_install       :    7 (  0.5%)
+  check_uninstall     :    3 (  0.2%)
+  type                :    1 (  0.1%)
+
+================================================================================
+LATEX USAGE INSTRUCTIONS
+================================================================================
+
+1. Figures:
+   Use PDF format for vector graphics in LaTeX:
+
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.8\textwidth]{fig_subgoals_distribution.pdf}
+   \caption{Distribution of key subgoals per episode.}
+   \label{fig:subgoals_dist}
+   \end{figure}
+
+2. Tables:
+   Include the generated LaTeX table:
+
+   \input{table_ess_statistics.tex}
+
+3. Required LaTeX packages:
+   \usepackage{graphicx}
+   \usepackage{booktabs}  % For better table formatting
+
+================================================================================
+Notes:
+- All figures are generated in both PDF (for LaTeX) and PNG (for preview)
+- PDF figures use TrueType fonts compatible with LaTeX
+- All figures use publication-quality settings (300 DPI)
+- Color scheme is print-friendly and colorblind-accessible
+================================================================================

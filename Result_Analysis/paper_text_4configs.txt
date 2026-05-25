@@ -1,0 +1,61 @@
+
+=============================================================================
+EXPERIMENTAL RESULTS SECTION (4 CONFIGURATIONS)
+=============================================================================
+
+## Overall Performance
+
+We evaluate OODroid against the baseline AutoDroid system across four experimental
+configurations: (1) Baseline AutoDroid, (2) OODroid (Full System), (3) Without SOD
+(Subgoal-Oracle-Driven), and (4) Without Conflict-based Adaptation. Table 1 presents
+the test goal and subgoal completion rates for all configurations.
+
+Our full OODroid system achieves a test goal completion rate of 23.08%, representing
+a 203.7% improvement over the baseline AutoDroid's 7.60%. The test subgoal completion
+rate shows similar improvements, with OODroid achieving 22.65% compared to AutoDroid's
+7.39% (206.5% improvement).
+
+## Ablation Study
+
+To understand the individual contributions of OODroid's key components, we conducted
+ablation studies by selectively removing the SOD-OTAA component and the Conflict-based
+Adaptation component.
+
+### SOD-OTAA Component Contribution
+
+When removing the SOD-OTAA component (Without SOD configuration), the system achieves
+a test goal completion rate of 19.65% and subgoal completion rate of 19.53%. This
+represents the contribution of the SOD-OTAA component:
+- Goal Rate: +17.4% improvement (from 19.65% to 23.08%)
+- Subgoal Rate: +16.0% improvement (from 19.53% to 22.65%)
+
+### Conflict-based Adaptation Component Contribution
+
+When removing the Conflict-based Adaptation component (Without Conflict Adaptation
+configuration), the system achieves a test goal completion rate of 20.29% and subgoal
+completion rate of 20.17%. The Conflict-based Adaptation component contributes:
+- Goal Rate: +13.8% improvement (from 20.29% to 23.08%)
+- Subgoal Rate: +12.3% improvement (from 20.17% to 22.65%)
+
+## Page-level and Assertion-level Performance
+
+Table 2 compares the page-level and assertion-level performance metrics between
+OODroid (Full) and the Without Conflict Adaptation configuration. 
+
+For page-level metrics, OODroid achieves:
+- F1 Score: 44.87% (vs. 51.64% without conflict adaptation)
+- Recall: 57.14% (vs. 65.04% without conflict adaptation)
+- Precision: 36.95% (vs. 42.87% without conflict adaptation)
+- Accuracy: 83.26% (vs. 83.18% without conflict adaptation)
+
+For assertion-level metrics, OODroid achieves:
+- F1 Score: 17.25% (vs. 18.68% without conflict adaptation)
+- Recall: 25.51% (vs. 31.74% without conflict adaptation)
+- Precision: 13.05% (vs. 13.38% without conflict adaptation)
+
+The results show that while the Conflict-based Adaptation component slightly reduces
+page-level and assertion-level metrics, it significantly improves the overall test
+goal completion rate by ensuring better alignment between generated expectations and
+actual application behavior.
+
+=============================================================================

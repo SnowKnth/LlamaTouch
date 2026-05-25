@@ -1,0 +1,74 @@
+================================================================================
+ESS STATISTICS SUMMARY REPORT
+================================================================================
+
+1. EPISODE (TRACE) STATISTICS
+--------------------------------------------------------------------------------
+Total number of episodes: 495
+Total number of key states (.ess files): 552
+
+Key Subgoals per Episode:
+  Mean: 1.12
+  Median: 1.0
+  Std Dev: 0.33
+  Min: 1
+  Max: 3
+
+2. ASSERTION STATISTICS
+--------------------------------------------------------------------------------
+Total Assertions per Key State:
+  Mean: 2.50
+  Median: 2.0
+  Std Dev: 0.96
+  Min: 1
+  Max: 7
+  Total assertions across all .ess files: 1379
+
+UI-related Assertions per Key State (click, exact, fuzzy):
+  Mean: 1.59
+  Median: 1.0
+  Std Dev: 0.94
+  Min: 0
+  Max: 6
+  Total UI assertions: 878
+  Percentage of total: 63.7%
+
+3. ASSERTION TYPE BREAKDOWN
+--------------------------------------------------------------------------------
+  exact               :    698 ( 50.6%) [UI-related]
+  activity            :    490 ( 35.5%)
+  click               :     98 (  7.1%) [UI-related]
+  fuzzy               :     82 (  5.9%) [UI-related]
+  check_install       :      7 (  0.5%)
+  check_uninstall     :      3 (  0.2%)
+  type                :      1 (  0.1%)
+
+  TOTAL               :   1379 (100.0%)
+
+4. UI ASSERTION TYPE DETAILS
+--------------------------------------------------------------------------------
+
+CLICK assertions:
+  Total count: 98
+  Mean per .ess file: 0.18
+  Median per .ess file: 0.0
+  Max in single .ess file: 2
+  .ess files with this assertion: 97
+
+EXACT assertions:
+  Total count: 698
+  Mean per .ess file: 1.26
+  Median per .ess file: 1.0
+  Max in single .ess file: 6
+  .ess files with this assertion: 451
+
+FUZZY assertions:
+  Total count: 82
+  Mean per .ess file: 0.15
+  Median per .ess file: 0.0
+  Max in single .ess file: 3
+  .ess files with this assertion: 77
+
+================================================================================
+Report generated successfully!
+================================================================================

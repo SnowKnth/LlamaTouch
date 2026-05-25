@@ -1,0 +1,5 @@
+Configuration,Test Goal Completion Rate (%),Test Subgoal Completion Rate (%)
+Baseline AutoDroid,7.6,7.39
+OODroid (Full),23.08,22.65
+Without SOD,19.65,19.53
+Without Conflict Adaptation,20.29,20.17

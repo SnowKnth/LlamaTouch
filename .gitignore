@@ -26,4 +26,7 @@ RASSDroid
 FTdroid-main/*
 !FTdroid-main/README.md
 
+android_world/*
+!android_world/tutorial/
+
 Scripts_APIKeys.txt
